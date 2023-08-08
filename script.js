@@ -17,7 +17,7 @@ function App() {
   }
 
   function handleClick() {
-    if (value.length > 0) setNewList((preValue) => [...preValue, value]);
+    if (value.length > 0) setNewList(preValue => [...preValue, value]);
     setNewValue("");
   }
 
@@ -30,45 +30,45 @@ function App() {
     setNewList(newList);
   }
 
-  return (
-    <Card className="bg-light mt-3 me-3 ms-3 pe-2 ps-2 pb-2">
-      <h1 className="text-center mt-3">Ticket Tracker</h1>
-      <InputGroup className="mt-3">
-        <Form.Control
-          onKeyUp={enterKey}
-          onChange={input}
-          value={value}
-          placeholder="Enter Your Ticket Number"
-          aria-describedby="basic-addon2"
-        />
-        <Button onClick={handleClick} variant="secondary" id="button-addon2">
-          Submit
-        </Button>
-      </InputGroup>
-      <ListGroup className="d-flex mt-2">
-        {list.map((item, index) => (
-          <ListGroup.Item key={index} className="p-2 w-100" variant="info">
-            {item}
-            <Button
-              onClick={() => clearItem(index)}
-              className="ms-3"
-              variant="secondary"
-            >
-              Posted
-            </Button>
-          </ListGroup.Item>
-        ))}
-      </ListGroup>
-      <Button
-        onClick={clearList}
-        className="mt-2"
-        variant="dark"
-        id="button-addon2"
-      >
-        Clear All
-      </Button>
-    </Card>
-  );
+  return /*#__PURE__*/(
+    React.createElement(Card, { className: "bg-light mt-3 me-3 ms-3 pe-2 ps-2 pb-2" }, /*#__PURE__*/
+    React.createElement("h1", { className: "text-center mt-3" }, "Ticket Tracker"), /*#__PURE__*/
+    React.createElement(InputGroup, { className: "mt-3" }, /*#__PURE__*/
+    React.createElement(Form.Control, {
+      onKeyUp: enterKey,
+      onChange: input,
+      value: value,
+      placeholder: "Enter Your Ticket Number",
+      "aria-describedby": "basic-addon2" }), /*#__PURE__*/
+
+    React.createElement(Button, { onClick: handleClick, variant: "secondary", id: "button-addon2" }, "Submit")), /*#__PURE__*/
+
+
+
+    React.createElement(ListGroup, { className: "d-flex mt-2" },
+    list.map((item, index) => /*#__PURE__*/
+    React.createElement(ListGroup.Item, { key: index, className: "p-2 w-100", variant: "info" },
+    item, /*#__PURE__*/
+    React.createElement(Button, {
+      onClick: () => clearItem(index),
+      className: "ms-3",
+      variant: "secondary" }, "Posted")))), /*#__PURE__*/
+
+
+
+
+
+
+    React.createElement(Button, {
+      onClick: clearList,
+      className: "mt-2",
+      variant: "dark",
+      id: "button-addon2" }, "Clear All")));
+
+
+
+
+
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById("app"));
